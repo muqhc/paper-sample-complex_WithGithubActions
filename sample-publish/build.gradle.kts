@@ -21,8 +21,8 @@ publishing {
             name = "central"
 
             credentials.runCatching {
-                val nexusUsername: String by project
-                val nexusPassword: String by project
+                val nexusUsername: String = properties["nexusUsername"] as? String ?: System.getenv("MAVEN_USERNAME")
+                val nexusPassword: String = properties["nexusPassword"] as? String ?: System.getenv("MAVEN_PASSWORD")
                 username = nexusUsername
                 password = nexusPassword
             }.onFailure {
