@@ -2,7 +2,7 @@ import org.gradle.api.Project
 
 object Dependency {
     object Kotlin {
-        const val Version = "1.7.10"
+        const val Version = "1.7.20"
     }
 
     object Paper {
